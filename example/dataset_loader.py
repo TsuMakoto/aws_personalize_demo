@@ -25,7 +25,6 @@ class DatasetLoader:
             if description['status'] == 'ACTIVE':
                 break
             else:
-                print("#", end="")
                 time.sleep(1)
                 description = self.personalize.describe_dataset_group(
                             datasetGroupArn=dg_arn)['datasetGroup']
@@ -59,7 +58,6 @@ class DatasetLoader:
             if description['status'] == 'ACTIVE':
                 break
             else:
-                print("#", end="")
                 time.sleep(100)
                 description = self.personalize.describe_dataset_import_job(
                         datasetImportJobArn=dij_arn

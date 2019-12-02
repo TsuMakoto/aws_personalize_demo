@@ -85,4 +85,8 @@ if len(argv) == 1:
 elif len(argv) == 3:
     session = boto3.session.Session(
             profile_name=os.environ.get('PROFILE_NAME'))
-    RecommendGetter.get(argv[2])
+    item_list = RecommendGetter(session, argv[1]).get(argv[2])
+    print("🔻Recommended item ID")
+    for item in item_list:
+        print(item['itemId'])
+        print('-------------')

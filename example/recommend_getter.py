@@ -6,5 +6,5 @@ class RecommendGetter:
     def get(self, user_id):
         return self.personalize_runtime.get_recommendations(
                 campaignArn=self.campaign_arn,
-                userId=self.user_id,
+                userId=user_id,
                 numResults=123)['itemList']
